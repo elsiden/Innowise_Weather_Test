@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import SnapKit
 
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
-        UITabBar.appearance().barTintColor = .systemBackground
+        view.backgroundColor = UIColor(cgColor: CGColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1))
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(cgColor: CGColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1))
+            
+            self.tabBar.standardAppearance = appearance
+            self.tabBar.scrollEdgeAppearance = self.tabBar.standardAppearance
+        }
+        
         tabBar.tintColor = .label
         setupVCs()
     }
@@ -33,8 +43,8 @@ class TabBarController: UITabBarController {
     
     func setupVCs() {
         viewControllers = [
-            createNavController(for: ViewController(), title: "Today", image: UIImage(systemName: "sun.max.fill")!),
-            createNavController(for: ViewController(), title: "Forecast", image: UIImage(systemName: "cloud.sun.bolt.fill")!)
+            createNavController(for: TodayWeatherVC(), title: "Today", image: UIImage(systemName: "sun.max.fill")!),
+            createNavController(for: ForecastWeatherVC(), title: "Forecast", image: UIImage(systemName: "cloud.sun.bolt.fill")!)
         ]
     }
 

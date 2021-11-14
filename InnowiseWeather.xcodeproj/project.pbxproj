@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D8D880EF5EA66BA9AF59CFB /* Pods_InnowiseWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D7C53FAED140E6F5AB3FAD /* Pods_InnowiseWeather.framework */; };
+		F15F2B5627413D2F009DFBF8 /* TodayWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F2B5527413D2F009DFBF8 /* TodayWeatherVC.swift */; };
+		F15F2B5827413D5F009DFBF8 /* ForecastWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F2B5727413D5F009DFBF8 /* ForecastWeatherVC.swift */; };
 		F1639D27273EF3F000573C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1639D26273EF3F000573C30 /* AppDelegate.swift */; };
 		F1639D29273EF3F000573C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1639D28273EF3F000573C30 /* SceneDelegate.swift */; };
-		F1639D2B273EF3F000573C30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1639D2A273EF3F000573C30 /* ViewController.swift */; };
 		F1639D30273EF3F300573C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1639D2F273EF3F300573C30 /* Assets.xcassets */; };
 		F1639D33273EF3F300573C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1639D31273EF3F300573C30 /* LaunchScreen.storyboard */; };
 		F1639D3B273EF44100573C30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1639D3A273EF44100573C30 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11774A1FA16F2AB5A11CB401 /* Pods-InnowiseWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnowiseWeather.release.xcconfig"; path = "Target Support Files/Pods-InnowiseWeather/Pods-InnowiseWeather.release.xcconfig"; sourceTree = "<group>"; };
+		82D7C53FAED140E6F5AB3FAD /* Pods_InnowiseWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InnowiseWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D60D43B0EFAF6B0F1ED85A /* Pods-InnowiseWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnowiseWeather.debug.xcconfig"; path = "Target Support Files/Pods-InnowiseWeather/Pods-InnowiseWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		F15F2B5527413D2F009DFBF8 /* TodayWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherVC.swift; sourceTree = "<group>"; };
+		F15F2B5727413D5F009DFBF8 /* ForecastWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherVC.swift; sourceTree = "<group>"; };
 		F1639D23273EF3F000573C30 /* InnowiseWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnowiseWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1639D26273EF3F000573C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1639D28273EF3F000573C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1639D2A273EF3F000573C30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1639D2F273EF3F300573C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1639D32273EF3F300573C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1639D34273EF3F300573C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D8D880EF5EA66BA9AF59CFB /* Pods_InnowiseWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		633ABB9F0F0218142B23FB50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9D60D43B0EFAF6B0F1ED85A /* Pods-InnowiseWeather.debug.xcconfig */,
+				11774A1FA16F2AB5A11CB401 /* Pods-InnowiseWeather.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF9B116C2CFE7F042980E576 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82D7C53FAED140E6F5AB3FAD /* Pods_InnowiseWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F1639D1A273EF3F000573C30 = {
 			isa = PBXGroup;
 			children = (
 				F1639D25273EF3F000573C30 /* InnowiseWeather */,
 				F1639D24273EF3F000573C30 /* Products */,
+				633ABB9F0F0218142B23FB50 /* Pods */,
+				BF9B116C2CFE7F042980E576 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +84,12 @@
 			children = (
 				F1639D26273EF3F000573C30 /* AppDelegate.swift */,
 				F1639D28273EF3F000573C30 /* SceneDelegate.swift */,
-				F1639D2A273EF3F000573C30 /* ViewController.swift */,
 				F1639D2F273EF3F300573C30 /* Assets.xcassets */,
 				F1639D31273EF3F300573C30 /* LaunchScreen.storyboard */,
 				F1639D34273EF3F300573C30 /* Info.plist */,
 				F1639D3A273EF44100573C30 /* TabBarController.swift */,
+				F15F2B5527413D2F009DFBF8 /* TodayWeatherVC.swift */,
+				F15F2B5727413D5F009DFBF8 /* ForecastWeatherVC.swift */,
 			);
 			path = InnowiseWeather;
 			sourceTree = "<group>";
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1639D37273EF3F300573C30 /* Build configuration list for PBXNativeTarget "InnowiseWeather" */;
 			buildPhases = (
+				1A926B9DC19C088686CAD20B /* [CP] Check Pods Manifest.lock */,
 				F1639D1F273EF3F000573C30 /* Sources */,
 				F1639D20273EF3F000573C30 /* Frameworks */,
 				F1639D21273EF3F000573C30 /* Resources */,
+				E251EBD0C35621D304DF3E5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,14 +161,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A926B9DC19C088686CAD20B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InnowiseWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E251EBD0C35621D304DF3E5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InnowiseWeather/Pods-InnowiseWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InnowiseWeather/Pods-InnowiseWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InnowiseWeather/Pods-InnowiseWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1639D1F273EF3F000573C30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1639D2B273EF3F000573C30 /* ViewController.swift in Sources */,
+				F15F2B5627413D2F009DFBF8 /* TodayWeatherVC.swift in Sources */,
 				F1639D3B273EF44100573C30 /* TabBarController.swift in Sources */,
 				F1639D27273EF3F000573C30 /* AppDelegate.swift in Sources */,
+				F15F2B5827413D5F009DFBF8 /* ForecastWeatherVC.swift in Sources */,
 				F1639D29273EF3F000573C30 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +348,7 @@
 		};
 		F1639D38273EF3F300573C30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D60D43B0EFAF6B0F1ED85A /* Pods-InnowiseWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +376,7 @@
 		};
 		F1639D39273EF3F300573C30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11774A1FA16F2AB5A11CB401 /* Pods-InnowiseWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
