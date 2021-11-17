@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use Location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use Location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Use Location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Use Location</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

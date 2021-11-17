@@ -7,4 +7,6 @@ target 'InnowiseWeather' do
 
   # Pods for InnowiseWeather
   pod 'SnapKit', '~> 5.0.0'
+  pod 'Alamofire', '~> 5.4'
+  pod 'AlamofireNetworkActivityLogger', '~> 3.4'
 end

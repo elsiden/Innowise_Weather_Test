@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8D8D880EF5EA66BA9AF59CFB /* Pods_InnowiseWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D7C53FAED140E6F5AB3FAD /* Pods_InnowiseWeather.framework */; };
+		F1252F602742BFBF008B6888 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1252F5F2742BFBF008B6888 /* HttpManager.swift */; };
+		F1252F622742BFEC008B6888 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1252F612742BFEC008B6888 /* ParseManager.swift */; };
+		F1252F642742C091008B6888 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1252F632742C091008B6888 /* Weather.swift */; };
+		F1252F662742C246008B6888 /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1252F652742C246008B6888 /* WeatherDescription.swift */; };
+		F1316654274443550055F375 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1316653274443550055F375 /* WeatherType.swift */; };
+		F1316656274445220055F375 /* WindInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1316655274445220055F375 /* WindInfo.swift */; };
+		F15D27BB274504C600CEAB61 /* TodayWeatherVC+SetWindDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15D27BA274504C600CEAB61 /* TodayWeatherVC+SetWindDirection.swift */; };
 		F15F2B5627413D2F009DFBF8 /* TodayWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F2B5527413D2F009DFBF8 /* TodayWeatherVC.swift */; };
 		F15F2B5827413D5F009DFBF8 /* ForecastWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F2B5727413D5F009DFBF8 /* ForecastWeatherVC.swift */; };
 		F1639D27273EF3F000573C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1639D26273EF3F000573C30 /* AppDelegate.swift */; };
@@ -15,12 +22,21 @@
 		F1639D30273EF3F300573C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1639D2F273EF3F300573C30 /* Assets.xcassets */; };
 		F1639D33273EF3F300573C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1639D31273EF3F300573C30 /* LaunchScreen.storyboard */; };
 		F1639D3B273EF44100573C30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1639D3A273EF44100573C30 /* TabBarController.swift */; };
+		F1C6B45E2745643C001E4600 /* SetWeatherImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B45D2745643C001E4600 /* SetWeatherImage.swift */; };
+		F1FC535527442DE300DE76AD /* ListOfWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC535427442DE300DE76AD /* ListOfWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11774A1FA16F2AB5A11CB401 /* Pods-InnowiseWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnowiseWeather.release.xcconfig"; path = "Target Support Files/Pods-InnowiseWeather/Pods-InnowiseWeather.release.xcconfig"; sourceTree = "<group>"; };
 		82D7C53FAED140E6F5AB3FAD /* Pods_InnowiseWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InnowiseWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D60D43B0EFAF6B0F1ED85A /* Pods-InnowiseWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnowiseWeather.debug.xcconfig"; path = "Target Support Files/Pods-InnowiseWeather/Pods-InnowiseWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		F1252F5F2742BFBF008B6888 /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		F1252F612742BFEC008B6888 /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
+		F1252F632742C091008B6888 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		F1252F652742C246008B6888 /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
+		F1316653274443550055F375 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
+		F1316655274445220055F375 /* WindInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindInfo.swift; sourceTree = "<group>"; };
+		F15D27BA274504C600CEAB61 /* TodayWeatherVC+SetWindDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayWeatherVC+SetWindDirection.swift"; sourceTree = "<group>"; };
 		F15F2B5527413D2F009DFBF8 /* TodayWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherVC.swift; sourceTree = "<group>"; };
 		F15F2B5727413D5F009DFBF8 /* ForecastWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherVC.swift; sourceTree = "<group>"; };
 		F1639D23273EF3F000573C30 /* InnowiseWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnowiseWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +46,8 @@
 		F1639D32273EF3F300573C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1639D34273EF3F300573C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1639D3A273EF44100573C30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F1C6B45D2745643C001E4600 /* SetWeatherImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWeatherImage.swift; sourceTree = "<group>"; };
+		F1FC535427442DE300DE76AD /* ListOfWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +79,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F1252F5C2742BC5B008B6888 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1639D3A273EF44100573C30 /* TabBarController.swift */,
+				F15F2B5527413D2F009DFBF8 /* TodayWeatherVC.swift */,
+				F15F2B5727413D5F009DFBF8 /* ForecastWeatherVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F1252F5D2742BC72008B6888 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				F1252F5F2742BFBF008B6888 /* HttpManager.swift */,
+				F1252F612742BFEC008B6888 /* ParseManager.swift */,
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		F1252F5E2742BC81008B6888 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1252F632742C091008B6888 /* Weather.swift */,
+				F1252F652742C246008B6888 /* WeatherDescription.swift */,
+				F1FC535427442DE300DE76AD /* ListOfWeather.swift */,
+				F1316653274443550055F375 /* WeatherType.swift */,
+				F1316655274445220055F375 /* WindInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F15D27B92745048F00CEAB61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F15D27BA274504C600CEAB61 /* TodayWeatherVC+SetWindDirection.swift */,
+				F1C6B45D2745643C001E4600 /* SetWeatherImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F1639D1A273EF3F000573C30 = {
 			isa = PBXGroup;
 			children = (
@@ -82,14 +140,15 @@
 		F1639D25273EF3F000573C30 /* InnowiseWeather */ = {
 			isa = PBXGroup;
 			children = (
+				F15D27B92745048F00CEAB61 /* Extensions */,
+				F1252F5E2742BC81008B6888 /* Models */,
+				F1252F5D2742BC72008B6888 /* NetWorking */,
+				F1252F5C2742BC5B008B6888 /* ViewControllers */,
 				F1639D26273EF3F000573C30 /* AppDelegate.swift */,
 				F1639D28273EF3F000573C30 /* SceneDelegate.swift */,
 				F1639D2F273EF3F300573C30 /* Assets.xcassets */,
 				F1639D31273EF3F300573C30 /* LaunchScreen.storyboard */,
 				F1639D34273EF3F300573C30 /* Info.plist */,
-				F1639D3A273EF44100573C30 /* TabBarController.swift */,
-				F15F2B5527413D2F009DFBF8 /* TodayWeatherVC.swift */,
-				F15F2B5727413D5F009DFBF8 /* ForecastWeatherVC.swift */,
 			);
 			path = InnowiseWeather;
 			sourceTree = "<group>";
@@ -208,9 +267,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1252F662742C246008B6888 /* WeatherDescription.swift in Sources */,
+				F15D27BB274504C600CEAB61 /* TodayWeatherVC+SetWindDirection.swift in Sources */,
+				F1252F642742C091008B6888 /* Weather.swift in Sources */,
+				F1252F622742BFEC008B6888 /* ParseManager.swift in Sources */,
+				F1316656274445220055F375 /* WindInfo.swift in Sources */,
 				F15F2B5627413D2F009DFBF8 /* TodayWeatherVC.swift in Sources */,
 				F1639D3B273EF44100573C30 /* TabBarController.swift in Sources */,
+				F1C6B45E2745643C001E4600 /* SetWeatherImage.swift in Sources */,
+				F1FC535527442DE300DE76AD /* ListOfWeather.swift in Sources */,
+				F1316654274443550055F375 /* WeatherType.swift in Sources */,
 				F1639D27273EF3F000573C30 /* AppDelegate.swift in Sources */,
+				F1252F602742BFBF008B6888 /* HttpManager.swift in Sources */,
 				F15F2B5827413D5F009DFBF8 /* ForecastWeatherVC.swift in Sources */,
 				F1639D29273EF3F000573C30 /* SceneDelegate.swift in Sources */,
 			);
