@@ -35,7 +35,7 @@ class ParseManager {
             for i in weather {
                 guard let descriptionWeather = i["description"] as? String,
                       let iconWeather = i["icon"] as? String else { return nil }
-                weatherType = WeatherType(descriptionWeather: descriptionWeather, iconWeather: iconWeather)
+                weatherType = WeatherType(descriptionWeather: descriptionWeather.capitalized, iconWeather: iconWeather)
             }
             
             guard let wind = value["wind"] as? [String: Any],
