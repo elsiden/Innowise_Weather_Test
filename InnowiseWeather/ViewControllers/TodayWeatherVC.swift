@@ -12,7 +12,7 @@ import CoreLocation
 class TodayWeatherVC: UIViewController {
     
     let locationManager = CLLocationManager()
-    var currentWeather: Weather?
+    var currentWeather: WeatherToday?
     var weatherForShare: [String] = []
     
     var iconWeather: String = ""
@@ -39,7 +39,7 @@ class TodayWeatherVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initialize()
+        initializeFirstPage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,7 +75,7 @@ extension TodayWeatherVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinate = locations.first?.coordinate else { return }
         
-        HTTPManager.shared.getWeather(where: coordinate.latitude, and: coordinate.longitude) { weather in
+        HTTPManager.shared.getWeatherToday(where: coordinate.latitude, and: coordinate.longitude) { weather in
             self.currentWeather = weather
             
             guard self.currentWeather != nil else { return }

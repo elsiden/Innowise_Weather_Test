@@ -8,7 +8,7 @@
 import UIKit
 
 extension TodayWeatherVC {
-    func initialize() {
+    func initializeFirstPage() {
         weatherImage.tintColor = UIColor(red: 255/255, green: 168/255, blue: 18/255, alpha: 1)
         view.addSubview(weatherImage)
         weatherImage.snp.makeConstraints { make in
