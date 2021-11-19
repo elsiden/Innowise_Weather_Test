@@ -10,7 +10,7 @@ import UIKit
 class ParseManager {
     static let shared = ParseManager()
     
-    func getParseDataForecast(where data: Data) -> [WeatherForecast?]? {
+    func getParseDataForecast(where data: Data) -> [WeatherForecast]? {
         guard let jsonWeather = try? JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] else { return [] }
         
         var listOfWeather: [WeatherForecast] = []

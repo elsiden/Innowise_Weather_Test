@@ -38,7 +38,10 @@ class TodayWeatherVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if !isConnectedToNetwork() {
+            presentAlertController(with: "Your connection is absent", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        }
         initializeFirstPage()
     }
     
@@ -55,6 +58,7 @@ class TodayWeatherVC: UIViewController {
     
     func setupLocation(_ completion: (Bool) -> ()) {
         guard CLLocationManager.locationServicesEnabled() else {
+            presentAlertController(with: "Your geolocation services are disabled", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
             completion(false)
             return
         }
@@ -63,6 +67,7 @@ class TodayWeatherVC: UIViewController {
         case .authorizedAlways, .authorizedWhenInUse:
             completion(true)
         case .denied:
+            presentAlertController(with: "You have forbidden the application to use your location", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
             completion(false)
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -73,12 +78,18 @@ class TodayWeatherVC: UIViewController {
 
 extension TodayWeatherVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let coordinate = locations.first?.coordinate else { return }
+        guard let coordinate = locations.first?.coordinate else {
+            presentAlertController(with: "Your coordinates were not received, try again later", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            return
+        }
         
         HTTPManager.shared.getWeatherToday(where: coordinate.latitude, and: coordinate.longitude) { weather in
             self.currentWeather = weather
             
-            guard self.currentWeather != nil else { return }
+            guard self.currentWeather != nil else {
+                self.presentAlertController(with: "Data of weather were not received, check your connection", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                return
+            }
             
             DispatchQueue.main.async {
                 guard let currentWeather = self.currentWeather else { return }

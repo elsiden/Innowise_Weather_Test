@@ -14,7 +14,7 @@ class ForecastWeatherVC: UIViewController {
     let locationManager = CLLocationManager()
 
     let weatherTableView = UITableView()
-    var currentWeather: [WeatherForecast?]?
+    var currentWeather: [WeatherForecast]?
     var cellsInDays: [[String]] = []
     var days: [String] = []
     
@@ -26,6 +26,9 @@ class ForecastWeatherVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if !isConnectedToNetwork() {
+            presentAlertController(with: "Your connection is absent", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        }
         initializeSecondPage()
         weatherTableView.register(ForecastTableViewCell.self, forCellReuseIdentifier: "forecastCell")
         weatherTableView.delegate = self
@@ -45,6 +48,7 @@ class ForecastWeatherVC: UIViewController {
     
     func setupLocation(_ completion: (Bool) -> ()) {
         guard CLLocationManager.locationServicesEnabled() else {
+            presentAlertController(with: "Your geolocation services are disabled", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
             completion(false)
             return
         }
@@ -53,6 +57,7 @@ class ForecastWeatherVC: UIViewController {
         case .authorizedAlways, .authorizedWhenInUse:
             completion(true)
         case .denied:
+            presentAlertController(with: "You have forbidden the application to use your location", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
             completion(false)
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -63,17 +68,23 @@ class ForecastWeatherVC: UIViewController {
 
 extension ForecastWeatherVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let coordinate = locations.first?.coordinate else { return }
+        guard let coordinate = locations.first?.coordinate else {
+            presentAlertController(with: "Your coordinates were not received, try again later", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            return
+        }
         
         HTTPManager.shared.getWeatherForecast(where: coordinate.latitude, and: coordinate.longitude) { weather in
             self.currentWeather = weather
             
-            guard self.currentWeather != nil else { return }
+            guard self.currentWeather != nil else {
+                self.presentAlertController(with: "Data of weather were not received, check your connection", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                return
+            }
             
             DispatchQueue.main.async {
                 
-                self.setCellsInDays()
-                self.setDays()
+                self.setCellsInDays(where: self.currentWeather ?? [])
+                self.setDays(where: self.currentWeather ?? [])
                 self.weatherTableView.reloadData()
             }
         }
@@ -90,9 +101,7 @@ extension ForecastWeatherVC: UITableViewDataSource {
         guard currentWeather != nil else { return "" }
         
         switch section {
-        case 0:
-            return "Today"
-        case 1, 2, 3, 4, 5:
+        case 0, 1, 2, 3, 4, 5:
             return days[section]
         default:
             return "Unknown section"

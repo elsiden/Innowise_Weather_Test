@@ -33,7 +33,6 @@ class ForecastTableViewCell: UITableViewCell {
     
     let weatherLabel: UILabel = {
         let weatherLabel = UILabel()
-//        weatherLabel.font = UIFont.systemFont(ofSize: 18)
         return weatherLabel
     }()
     
