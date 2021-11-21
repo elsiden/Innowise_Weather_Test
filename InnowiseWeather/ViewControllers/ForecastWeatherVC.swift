@@ -23,11 +23,15 @@ class ForecastWeatherVC: UIViewController {
     var weatherLabel: UILabel = UILabel()
     var degreesLabel: UILabel = UILabel()
     
+    var connection: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if !isConnectedToNetwork() {
             presentAlertController(with: "Your connection is absent", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        } else {
+            connection = true
         }
         initializeSecondPage()
         weatherTableView.register(ForecastTableViewCell.self, forCellReuseIdentifier: "forecastCell")
@@ -38,6 +42,7 @@ class ForecastWeatherVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        guard connection else { return }
         setupLocation { result in
             guard result else { return }
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -83,6 +88,8 @@ extension ForecastWeatherVC: CLLocationManagerDelegate {
             
             DispatchQueue.main.async {
                 
+                self.days.removeAll()
+                self.cellsInDays.removeAll()
                 self.setCellsInDays(where: self.currentWeather ?? [])
                 self.setDays(where: self.currentWeather ?? [])
                 self.weatherTableView.reloadData()

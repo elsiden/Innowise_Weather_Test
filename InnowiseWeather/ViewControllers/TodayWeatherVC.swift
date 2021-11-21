@@ -35,12 +35,16 @@ class TodayWeatherVC: UIViewController {
     var windDirectionLabel: UILabel = UILabel()
     var pressureLabel: UILabel = UILabel()
     var shareButton: UIButton = UIButton()
+    
+    var connection: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if !isConnectedToNetwork() {
             presentAlertController(with: "Your connection is absent", actions: UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        } else {
+            connection = true
         }
         initializeFirstPage()
     }
@@ -48,6 +52,7 @@ class TodayWeatherVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        guard connection else { return }
         setupLocation { result in
             guard result else { return }
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
