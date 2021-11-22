@@ -1,5 +1,5 @@
 //
-//  ForecastWeatherVC+Initialize.swift
+//  ForecastWeatherView+Initialize.swift
 //  InnowiseWeather
 //
 //  Created by Ivan Klishevich on 19.11.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ForecastWeatherVC {
+extension ForecastWeatherView {
     func initializeSecondPage() {
         weatherTableView.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         view.addSubview(weatherTableView)

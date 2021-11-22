@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension TodayWeatherVC {
+extension TodayWeatherView {
     func initializeFirstPage() {
         weatherImage.tintColor = UIColor(red: 255/255, green: 168/255, blue: 18/255, alpha: 1)
         weatherImage.image = UIImage(systemName: "eye.slash.circle")

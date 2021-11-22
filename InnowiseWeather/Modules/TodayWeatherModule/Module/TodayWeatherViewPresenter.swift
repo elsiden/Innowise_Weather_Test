@@ -1,14 +1,19 @@
 //
-//  TodayWeatherVC+SetWindDirection.swift
+//  TodayWeatherViewPresenter.swift
 //  InnowiseWeather
 //
-//  Created by Ivan Klishevich on 17.11.2021.
+//  Created by Ivan Klishevich on 22.11.2021.
 //
 
 import UIKit
 
-extension TodayWeatherVC {
-    func setWindDirection(where windDirection: Int) -> String{
+protocol TodayWeatherViewPresenter {
+    func setWindDirection(where windDirection: Int) -> String
+}
+
+class TodayWeatherPresenter: TodayWeatherViewPresenter {
+    
+    func setWindDirection(where windDirection: Int) -> String {
         var direction: String = ""
         if windDirection >= 0 && windDirection <= 23 ||
         windDirection >= 339 && windDirection <= 360 {
